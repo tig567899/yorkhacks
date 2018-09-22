@@ -43,7 +43,7 @@ router.route('/getData').post(async function(req, res)
 {
     try
     {
-        var data = await sqlSearch.getInfo(req);
+        var data = await sqlSearch.getData(req);
         //console.log(data);
         res.status(200).send(data);
     }
@@ -61,7 +61,7 @@ router.route('/updateData').post(async function(req, res)
 {
     try
     {
-        var data = await sqlSearch.checkInfo(req);
+        var data = await sqlSearch.updateData(req);
         //console.log(data);
         res.status(200).send(data);
     }
@@ -79,7 +79,7 @@ router.route('/updateInfo').post(async function(req, res)
 {
     try
     {
-        var data = await sqlSearch.checkInfo(req);
+        var data = await sqlSearch.updateInfo(req);
         //console.log(data);
         res.status(200).send(data);
     }
@@ -97,7 +97,7 @@ router.route('/getInfo').post(async function(req, res)
 {
     try
     {
-        var data = await sqlSearch.checkInfo(req);
+        var data = await sqlSearch.getInfo(req);
         //console.log(data);
         res.status(200).send(data);
     }
@@ -115,7 +115,7 @@ router.route('/makeOrder').post(async function(req, res)
 {
     try
     {
-        var data = await sqlSearch.checkInfo(req);
+        var data = await sqlSearch.makeOrder(req);
         //console.log(data);
         res.status(200).send(data);
     }

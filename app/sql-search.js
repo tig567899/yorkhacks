@@ -4,8 +4,9 @@ connect({
     host: 'localhost',
     user: 'standarduser',
     password: "",
-    database: 'harvold'
+    database: 'yorkhacks'
 });
 
 
-module.exports = {};
+
+module.exports = {login, checkInfo, getInfo, getData, updateData, updateInfo, makeOrder};

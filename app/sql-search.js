@@ -7,8 +7,7 @@ connect({
     database: 'yorkhacks'
 });
 
-async function login(req)
-{
+async function login(req) {
     var username = req.body.username;
     var pass = req.body.password;
     var sql = "SELECT password FROM login WHERE username = ?";
@@ -18,6 +17,25 @@ async function login(req)
     if
 
     return { code: 200, message: "Logged in" }
+}
+
+async function checkInfo(req) {
+    
+}
+async function getInfo(req) {
+    
+}
+async function getData(req) {
+    
+}
+async function updateData(req) {
+    
+}
+async function updateInfo(req) {
+    
+}
+async function makeOrder(req) {
+    
 }
 
 module.exports = {login, getInfo, getData, updateData, updateInfo, makeOrder};

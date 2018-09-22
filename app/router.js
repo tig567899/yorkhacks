@@ -19,7 +19,7 @@ router.route('/login').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/checkInfo').post(async function(req, res, next)
 {
@@ -37,7 +37,7 @@ router.route('/checkInfo').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/getData').post(async function(req, res, next)
 {
@@ -55,7 +55,7 @@ router.route('/getData').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/updateData').post(async function(req, res, next)
 {
@@ -73,7 +73,7 @@ router.route('/updateData').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/updateInfo').post(async function(req, res, next)
 {
@@ -91,7 +91,7 @@ router.route('/updateInfo').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/getInfo').post(async function(req, res, next)
 {
@@ -109,7 +109,7 @@ router.route('/getInfo').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 router.route('/makeOrder').post(async function(req, res, next)
 {
@@ -127,7 +127,7 @@ router.route('/makeOrder').post(async function(req, res, next)
 		res.status(500).send(data);
 		return;
 	}
-}
+});
 
 module.exports = router;
 

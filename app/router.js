@@ -4,7 +4,7 @@ const sqlSearch = require('./sql-search');
 
 const router = express.Router();
 
-router.route('/login').post(async function(req, res)
+router.route('/login').post(async function(req, res, next)
 {
     try
 	{
@@ -21,7 +21,7 @@ router.route('/login').post(async function(req, res)
 	}
 }
 
-router.route('/checkInfo').post(async function(req, res)
+router.route('/checkInfo').post(async function(req, res, next)
 {
     try
     {
@@ -39,7 +39,7 @@ router.route('/checkInfo').post(async function(req, res)
 	}
 }
 
-router.route('/getData').post(async function(req, res)
+router.route('/getData').post(async function(req, res, next)
 {
     try
     {
@@ -57,7 +57,7 @@ router.route('/getData').post(async function(req, res)
 	}
 }
 
-router.route('/updateData').post(async function(req, res)
+router.route('/updateData').post(async function(req, res, next)
 {
     try
     {
@@ -75,7 +75,7 @@ router.route('/updateData').post(async function(req, res)
 	}
 }
 
-router.route('/updateInfo').post(async function(req, res)
+router.route('/updateInfo').post(async function(req, res, next)
 {
     try
     {
@@ -93,7 +93,7 @@ router.route('/updateInfo').post(async function(req, res)
 	}
 }
 
-router.route('/getInfo').post(async function(req, res)
+router.route('/getInfo').post(async function(req, res, next)
 {
     try
     {
@@ -111,7 +111,7 @@ router.route('/getInfo').post(async function(req, res)
 	}
 }
 
-router.route('/makeOrder').post(async function(req, res)
+router.route('/makeOrder').post(async function(req, res, next)
 {
     try
     {

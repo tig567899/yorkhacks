@@ -20,23 +20,6 @@ router.route('/login').post(async function(req, res, next) {
 	}
 }
 
-router.route('/checkInfo').post(async function(req, res, next) {
-    try
-    {
-        var data = await sqlSearch.checkInfo(req);
-        //console.log(data);
-        res.status(200).send(data);
-    }
-    
-	catch(err)
-	{
-		next(err);
-		console.log(err);
-		res.status(500).send(data);
-		return;
-	}
-}
-
 router.route('/getData').post(async function(req, res, next) {
     try
     {

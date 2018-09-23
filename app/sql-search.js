@@ -24,9 +24,6 @@ async function login(req) {
     }
 }
 
-async function checkInfo(req) {
-    
-}
 async function getInfo(req) {
     
 }

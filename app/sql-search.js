@@ -7,26 +7,17 @@ connect({
     database: 'yorkhacks'
 });
 
-async function login(req) {
-    return true; // CHANGE IN PROD
-}
-async function checkInfo(req) {
+async function login(req)
+{
+    var username = req.body.username;
+    var pass = req.body.password;
+    var sql = "SELECT password FROM login WHERE username = ?";
     
-}
-async function getInfo(req) {
+    const result = await query(sql, [username]);
     
-}
-async function getData(req) {
-    
-}
-async function updateData(req) {
-    
-}
-async function updateInfo(req) {
-    
-}
-async function makeOrder(req) {
-    
+    if
+
+    return { code: 200, message: "Logged in" }
 }
 
-module.exports = {login, checkInfo, getInfo, getData, updateData, updateInfo, makeOrder};
+module.exports = {login, getInfo, getData, updateData, updateInfo, makeOrder};

@@ -25,7 +25,9 @@ async function login(req) {
 }
 
 async function getInfo(req) {
-    
+    var sql = "SELECT location from data WHERE username = ?";
+    const result = await query(sql, [req.body.username]);
+    return {code: 200, message: result[0].location};
 }
 
 async function getData(req) {
@@ -46,6 +48,7 @@ async function updateData(req) {
     const result = await query(sql, [JSON.stringify(req.body.supplies), req.body.username]);
     return {code: 200};
 }
+
 async function updateInfo(req) {
     var username = req.body.username;
     var location = req.body.location;

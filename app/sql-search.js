@@ -41,7 +41,7 @@ async function getData(req) {
     else
     {
         var sql = "SELECT supplies, name FROM data WHERE name = ?";
-        result = await query(sql, [username]);
+        result = JSON.parse(await query(sql, [username]));
     }
     
     var array = {

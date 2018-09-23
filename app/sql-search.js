@@ -32,7 +32,7 @@ async function getInfo(req) {
 
 async function getData(req) {
     var username = req.body.username;   
-    const result;
+    var result = 0;
     if (username === 'chapter')
     {
         var sql = "SELECT supplies, name FROM data";

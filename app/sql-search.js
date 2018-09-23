@@ -31,17 +31,20 @@ async function getInfo(req) {
 }
 
 async function getData(req) {
-   var username = req.body.username;
-   var sql = "SELECT supplies, name FROM data WHERE name = ?";
-   
-   if (username === 'chapter')
-   {
-       username = '*';
-   }
-   const result = await query(sql, [username]);
-   console.log(result[0].supplies);
-   var str = JSON.parse(result);
-   return { code: 200, message: str };
+    var username = req.body.username;   
+    if (username === 'chapter')
+    {
+        var sql = "SELECT supplies, name FROM data";
+        const result = await query(sql);
+    }
+    else
+    {
+        var sql = "SELECT supplies, name FROM data WHERE name = ?";
+        const result = await query(sql, [username]);
+    }
+    console.log(result[0].supplies);
+    var str = JSON.parse(result);
+    return { code: 200, message: str };
 }
 
 async function updateData(req) {

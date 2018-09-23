@@ -14,9 +14,14 @@ async function login(req) {
     
     const result = await query(sql, [username]);
     
-    if
-
-    return { code: 200, message: "Logged in" }
+    if (result[0].password === pass)
+    {
+        return { code: 200, message: "Logged in" };
+    }
+    else
+    {
+        return { code: 403, message: "Incorrect Password" };
+    }
 }
 
 async function checkInfo(req) {

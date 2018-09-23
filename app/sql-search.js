@@ -39,6 +39,7 @@ async function getData(req) {
        username = '*';
    }
    const result = await query(sql, [username]);
+   console.log(result[0].supplies);
    var str = JSON.parse(result[0].supplies);
    return { code: 200, message: str };
 }

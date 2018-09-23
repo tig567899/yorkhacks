@@ -25,7 +25,7 @@ router.route('/getData').post(async function(req, res, next) {
     {
         var data = await sqlSearch.getData(req);
         //console.log(data);
-        res.status(200).send(data);
+        res.status(200).json(data);
     }
     
 	catch(err)

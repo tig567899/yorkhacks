@@ -25,8 +25,11 @@ async function login(req) {
 }
 
 async function getInfo(req) {
-    
+    var sql = "SELECT location from data WHERE username = ?";
+    const result = await query(sql, [req.body.username]);
+    return {code: 200, message: result[0].location};
 }
+
 async function getData(req) {
    var username = req.body.username;
    var sql = "SELECT supplies FROM data WHERE username = ?";
@@ -35,11 +38,13 @@ async function getData(req) {
    var str = JSON.parse(result[0].supplies);
    return { code: 200, message: str };
 }
+
 async function updateData(req) {
     var sql = "UPDATE data SET supplies = ? WHERE name - ?";
     const result = await query(sql, [JSON.stringify(req.body.supplies), req.body.username]);
     return {code: 200};
 }
+
 async function updateInfo(req) {
     
 }

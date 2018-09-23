@@ -46,15 +46,15 @@ async function getData(req) {
     
     var array = {
         bandages: 0, 
-        examination_supplies: 0
-        scalpels: 0
-        iv_kits: 0
-        masks: 0
-        needles: 0
-        vitamins: 0
-        dental_supplies: 0
-        optical_supplies: 0
-        personal_hygiene: 0
+        examination_supplies: 0,
+        scalpels: 0,
+        iv_kits: 0,
+        masks: 0,
+        needles: 0,
+        vitamins: 0,
+        dental_supplies: 0,
+        optical_supplies: 0,
+        personal_hygiene: 0,
         antiseptics: 0};
     for (var x = 0; x < result.length; x++)
     {

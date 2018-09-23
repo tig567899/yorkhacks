@@ -31,7 +31,9 @@ async function getData(req) {
     
 }
 async function updateData(req) {
-    
+    var sql = "UPDATE data SET supplies = ? WHERE name - ?";
+    const result = await query(sql, [JSON.stringify(req.body.supplies), req.body.username]);
+    return {code: 200};
 }
 async function updateInfo(req) {
     

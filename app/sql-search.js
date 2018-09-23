@@ -81,7 +81,7 @@ async function updateData(req) {
         return +value
     }
     console.log (JSON.stringify(req.body.supplies, theReplacer));
-    const result = await query(sql, [JSON.stringify(req.body.supplies, theReplacer), req.body.username]);
+    const result = await query(sql, [JSON.stringify(req.body.supplies), req.body.username]);
     return {code: 200};
 }
 

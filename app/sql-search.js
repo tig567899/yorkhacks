@@ -58,18 +58,17 @@ async function getData(req) {
         antiseptics: 0};
     for (var x = 0; x < result.length; x++)
     {
-        array.bandages += result[x].bandages;
-        array.examination_supplies += result[x].examination_supplies;
-        array.scalpels += result[x].scalpels;
-        array.iv_kits += result[x].array;
-        array.masks += result[x].masks;
-        array.needles += result[x].needles;
-        array.vitamins += result[x].vitamins;
-        
-        array.dental_supplies += result[x].dental_supplies;
-        array.optical_supplies += result[x].optical_supplies;
-        array.personal_hygiene += result[x].personal_hygiene;
-        array.antiseptics += result[x].personal_hygiene;
+        array.bandages += (result[x].supplies.bandages == null ? 0 : result[x].supplies.bandages);
+        array.examination_supplies += (result[x].supplies.examination_supplies == null ? 0 : result[x].supplies.bandages);
+        array.scalpels += (result[x].supplies.scalpels == null ? 0 : result[x].supplies.bandages);
+        array.iv_kits += (result[x].supplies.array == null ? 0 : result[x].supplies.bandages);
+        array.masks += (result[x].supplies.masks == null ? 0 : result[x].supplies.bandages);
+        array.needles += (result[x].supplies.needles == null ? 0 : result[x].supplies.bandages);
+        array.vitamins += (result[x].supplies.vitamins == null ? 0 : result[x].supplies.bandages);
+        array.dental_supplies += (result[x].supplies.dental_supplies == null ? 0 : result[x].supplies.bandages);
+        array.optical_supplies += (result[x].supplies.optical_supplies == null ? 0 : result[x].supplies.bandages);
+        array.personal_hygiene += (result[x].supplies.personal_hygiene == null ? 0 : result[x].supplies.bandages);
+        array.antiseptics += (result[x].supplies.personal_hygiene == null ? 0 : result[x].supplies.bandages);
     }
     console.log(result[0].supplies);
     return { code: 200, message: array };

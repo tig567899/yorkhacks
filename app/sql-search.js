@@ -43,8 +43,36 @@ async function getData(req) {
         var sql = "SELECT supplies, name FROM data WHERE name = ?";
         result = await query(sql, [username]);
     }
+    
+    var array = {
+        bandages: 0, 
+        examination_supplies: 0
+        scalpels: 0
+        iv_kits: 0
+        masks: 0
+        needles: 0
+        vitamins: 0
+        dental_supplies: 0
+        optical_supplies: 0
+        personal_hygiene: 0
+        antiseptics: 0};
+    for (var x = 0; x < result.length; x++)
+    {
+        array.bandages += result[x].bandages;
+        array.examination_supplies += result[x].examination_supplies;
+        array.scalpels += result[x].scalpels;
+        array.iv_kits += result[x].array;
+        array.masks += result[x].masks;
+        array.needles += result[x].needles;
+        array.vitamins += result[x].vitamins;
+        
+        array.dental_supplies += result[x].dental_supplies;
+        array.optical_supplies += result[x].optical_supplies;
+        array.personal_hygiene += result[x].personal_hygiene;
+        array.antiseptics += result[x].personal_hygiene;
+    }
     console.log(result[0].supplies);
-    return { code: 200, message: result };
+    return { code: 200, message: array };
 }
 
 async function updateData(req) {

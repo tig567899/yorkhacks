@@ -80,7 +80,8 @@ async function updateData(req) {
     function theReplacer(key, value) {
         return +value
     }
-    const result = await query(sql, [req.body.supplies, req.body.username]);
+    console.log (JSON.stringify(req.body.supplies, theReplacer));
+    const result = await query(sql, [JSON.stringify(req.body.supplies, theReplacer), req.body.username]);
     return {code: 200};
 }
 

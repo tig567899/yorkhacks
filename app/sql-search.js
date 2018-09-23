@@ -37,7 +37,9 @@ async function updateInfo(req) {
     
 }
 async function makeOrder(req) {
-    
+    var sql = "UPDATE data SET supplies=\"{}\" WHERE name = ?";
+    const result = await query(sql, [req.body.username]);
+    return {code: 200};
 }
 
 module.exports = {login, getInfo, getData, updateData, updateInfo, makeOrder};

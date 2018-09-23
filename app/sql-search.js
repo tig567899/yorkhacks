@@ -10,7 +10,7 @@ connect({
 async function login(req) {
     var username = req.body.username;
     var pass = req.body.password;
-    var sql = "SELECT password FROM login WHERE username = ?";
+    var sql = "SELECT password FROM login WHERE name = ?";
     
     const result = await query(sql, [username]);
     
@@ -25,14 +25,14 @@ async function login(req) {
 }
 
 async function getInfo(req) {
-    var sql = "SELECT location from data WHERE username = ?";
+    var sql = "SELECT location from data WHERE name = ?";
     const result = await query(sql, [req.body.username]);
     return {code: 200, message: result[0].location};
 }
 
 async function getData(req) {
    var username = req.body.username;
-   var sql = "SELECT supplies FROM data WHERE username = ?";
+   var sql = "SELECT supplies FROM data WHERE name = ?";
    
    if (username === 'clinic')
    {
@@ -52,7 +52,7 @@ async function updateData(req) {
 async function updateInfo(req) {
     var username = req.body.username;
     var location = req.body.location;
-    var sql = "UPDATE login SET location = ? WHERE username = ?";
+    var sql = "UPDATE login SET location = ? WHERE name = ?";
     
     const result = await query(sql, [location, username]);
     return {code: 200};

@@ -34,7 +34,7 @@ async function getData(req) {
    var username = req.body.username;
    var sql = "SELECT supplies FROM data WHERE name = ?";
    
-   if (username === 'clinic')
+   if (username === 'chapter')
    {
        username = '*';
    }

@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 5050;
 
 app.use(helmet());
 app.use(cors());
+app.options('*', cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/yhacksapi', apiRouter);

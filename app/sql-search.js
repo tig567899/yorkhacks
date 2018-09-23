@@ -52,7 +52,7 @@ async function updateData(req) {
 async function updateInfo(req) {
     var username = req.body.username;
     var location = req.body.location;
-    var sql = "UPDATE login SET supplies = ? WHERE username = ?";
+    var sql = "UPDATE login SET location = ? WHERE username = ?";
     
     const result = await query(sql, [location, username]);
     return {code: 200};

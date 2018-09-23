@@ -44,8 +44,7 @@ async function getData(req) {
         result = await query(sql, [username]);
     }
     console.log(result[0].supplies);
-    var str = JSON.parse(result);
-    return { code: 200, message: str };
+    return { code: 200, message: result };
 }
 
 async function updateData(req) {

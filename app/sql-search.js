@@ -71,7 +71,6 @@ async function getData(req) {
         array.personal_hygiene += (supplies.personal_hygiene == null ? 0 : +supplies.personal_hygiene);
         array.antiseptics += (supplies.antiseptics == null ? 0 : +supplies.antiseptics);
     }
-    console.log(result[0].supplies);
     return { code: 200, message: array };
 }
 

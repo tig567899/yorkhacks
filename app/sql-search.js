@@ -32,7 +32,7 @@ async function getInfo(req) {
 
 async function getData(req) {
    var username = req.body.username;
-   var sql = "SELECT supplies FROM data WHERE name = ?";
+   var sql = "SELECT supplies, name FROM data WHERE name = ?";
    
    if (username === 'chapter')
    {
@@ -40,7 +40,7 @@ async function getData(req) {
    }
    const result = await query(sql, [username]);
    console.log(result[0].supplies);
-   var str = JSON.parse(result[0].supplies);
+   var str = JSON.parse(result);
    return { code: 200, message: str };
 }
 

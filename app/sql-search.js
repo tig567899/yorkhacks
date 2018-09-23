@@ -32,6 +32,10 @@ async function getData(req) {
    var username = req.body.username;
    var sql = "SELECT supplies FROM data WHERE username = ?";
    
+   if (username === 'clinic')
+   {
+       username = '*';
+   }
    const result = await query(sql, [username]);
    var str = JSON.parse(result[0].supplies);
    return { code: 200, message: str };
